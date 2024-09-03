@@ -29,7 +29,7 @@ def get_ollama_chat(model_name: str, temperature=DEFAULT_TEMPERATURE, base_url="
 
 
 def get_ollama_embedding(model_name: str, temperature=DEFAULT_TEMPERATURE):
-    return OllamaEmbeddings(model=model_name, temperature=temperature)
+    return OllamaEmbeddings(model=model_name, temperature=temperature, base_url="http://host.docker.internal:11434")
 
 # HuggingFace models
 

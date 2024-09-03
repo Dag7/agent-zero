@@ -10,9 +10,9 @@ from python.helpers.files import read_file
 from python.helpers import files
 import python.helpers.timed_input as timed_input
 
-
 input_lock = threading.Lock()
 os.chdir(files.get_abs_path("./work_dir"))  # change CWD to work_dir
+host_path = "/Users/gadsh/Desktop/gad/repo/agent-zero/work_dir"
 
 
 def initialize():
@@ -58,6 +58,9 @@ def initialize():
         # code_exec_docker_image = "frdel/agent-zero-exe:latest",
         # code_exec_docker_ports = { "22/tcp": 50022 }
         # code_exec_docker_volumes = { files.get_abs_path("work_dir"): {"bind": "/root", "mode": "rw"} }
+
+
+        code_exec_docker_volumes={host_path: {"bind": "/root", "mode": "rw"}},
         code_exec_ssh_enabled=True,
         # code_exec_ssh_addr = "localhost",
         # code_exec_ssh_port = 50022,
