@@ -1,0 +1,15 @@
+version: "3"
+services:
+  workspace:
+    container_name: vsc-agent-zero
+    mem_limit: 8g
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: ["tail","-f","/dev/null"]
+    network_mode: host
+    user: vscode
+    volumes:
+      - ..:/agent-zero
+      - /var/run/docker.sock:/var/run/docker.sock:bind
+      - /etc/localtime:/etc/localtime:bind

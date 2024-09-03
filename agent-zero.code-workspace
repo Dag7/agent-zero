@@ -1,0 +1,63 @@
+{
+    "folders": [
+        {
+            "name": "agent-zero",
+            "path": "."
+        },
+        
+    ],
+    "settings": {
+        "mochaExplorer.env": {
+            /* config mocha env variables here */
+        },
+        "workbench.colorCustomizations": {
+            "editorUnnecessaryCode.border": "#ff0000"
+        },
+        "search.exclude": {
+            "**/node_modules": true,
+            "**/bower_components": true,
+            "**/*.code-search": true,
+            "**/build": true
+        },
+        "editor.tokenColorCustomizations": {},
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "typescript.suggest.autoImports": true,
+        "typescript.referencesCodeLens.enabled": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.addMissingImports": "explicit",
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        },
+        "sqltools.connections": [],
+        "cSpell.words": [],
+        "cSpell.allowCompoundWords": true,
+        "[shellscript]": {
+            "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "[dockerfile]": {
+            "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+        },
+        "[dotenv]": {
+            "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "[properties]": {
+            "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "[ignore]": {
+            "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+            // "editor.defaultFormatter": "vscode.typescript-language-features"
+            "prettier.singleAttributePerLine": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[go]": {
+            "editor.defaultFormatter": "golang.go"
+        },
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+    }
+}

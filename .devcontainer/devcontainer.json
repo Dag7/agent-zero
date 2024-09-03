@@ -1,0 +1,84 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.234.0/containers/ubuntu
+{
+    "name": "agent-zero",
+    "dockerComposeFile": [
+        "docker-compose.workspace.yml",
+    ],
+    "workspaceFolder": "/agent-zero",
+    "containerEnv": {
+        "HOST_PROJECT_ROOT": "${localWorkspaceFolder}",
+        "DOCKER_BUILDKIT": "1",
+        "DISPLAY": "${env:DISPLAY}"
+    },
+    "service": "workspace",
+    // Set *default* container specific settings.json values on container create.
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+        "source=/etc/localtime,target=/etc/localtime,type=bind"
+    ],
+    "remoteEnv": {
+        "SYNC_LOCALHOST_KUBECONFIG": "true"
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "dev.containers.copyGitConfig": true
+            },
+            "extensions": [
+                "naumovs.color-highlight",
+                "esbenp.prettier-vscode",
+                "foxundermoon.shell-format",
+                "vscode-icons-team.vscode-icons",
+                "PKief.material-icon-theme",
+                "redhat.vscode-yaml",
+                "dbaeumer.vscode-eslint",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "github.vscode-pull-request-github",
+                "visualstudioexptteam.vscodeintellicode",
+                "dotjoshjohnson.xml",
+                "folke.vscode-monorepo-workspace",
+                "mikestead.dotenv",
+                "hediet.debug-visualizer",
+                "mhutchie.git-graph",
+                "bierner.markdown-mermaid",
+                "grapecity.gc-excelviewer",
+                "chekweitan.compare-view",
+                "streetsidesoftware.code-spell-checker",
+                "hbenl.vscode-mocha-test-adapter",
+                "kavod-io.vscode-jest-test-adapter",
+                "hbenl.vscode-test-explorer",
+                "ms-vscode.test-adapter-converter",
+                "mtxr.sqltools",
+                "mtxr.sqltools-driver-pg",
+                "graphql.vscode-graphql"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-from-docker:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2.7.1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "chmod +x .devcontainer/scripts/post_cmd.sh && .devcontainer/scripts/post_cmd.sh"
+    // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    //"remoteUser": "vscode"
+}
